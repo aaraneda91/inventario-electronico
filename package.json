@@ -1,0 +1,25 @@
+{
+  "name": "inventario-electronico",
+  "version": "1.0.0",
+  "description": "**Desafío: Sistema de Gestión de Inventario para una Tienda de Electrónica**",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "inventario-electronico"
+  },
+  "author": "Ariel Araneda Z.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0"
+  }
+}

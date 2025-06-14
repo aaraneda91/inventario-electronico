@@ -1,10 +1,6 @@
 // config/index.js
 require('dotenv').config(); // Carga las variables de entorno al inicio
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_DATABASE:', process.env.DB_DATABASE);
-console.log('DB_USERNAME:', process.env.DB_USERNAME);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
-console.log(process.env.NODE_ENV )
+
 const config = {
     app: {
         port: process.env.PORT || 3000,

@@ -18,12 +18,13 @@ class ProductModel {
     }
 
     async create(productData) {
-        const { nombre, precio_neto, precio_bruto, stock } = productData;
-        const [result] = await this.db.execute(
-            'INSERT INTO productos (nombre, precio_neto, precio_bruto, stock) VALUES (?, ?, ?, ?)',
-            [nombre, precio_neto, precio_bruto, stock]
-        );
-        return { id: result.insertId, ...productData }; // Devuelve el producto con su ID
+        const { nombre, precio_neto, precio_bruto, stock, id_categoria } = productData;
+        const query = "INSERT INTO productos (nombre, precio_neto, precio_bruto, stock, id_categoria) VALUES (?, ?, ?, ?, ?)";
+        console.log(query);
+        const params = [nombre, precio_neto, precio_bruto, stock, id_categoria];
+        const [result] = await this.db.execute(query, params);
+        // IMPORTANTE: Devuelve el producto con el ID generado por la base de datos
+        return { idproductos: result.insertId, ...productData };
     }
 
     async update(id, productData) {

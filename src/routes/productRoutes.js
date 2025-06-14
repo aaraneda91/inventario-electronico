@@ -7,5 +7,6 @@ const productController = require('../controllers/productController');
 // Por ejemplo: GET /api/products
 router.get('/products', productController.getAllProducts);
 router.post('/products', productController.createProduct);
+router.put('/products/:id', productController.updateProduct);
 
 module.exports = router;

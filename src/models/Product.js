@@ -20,7 +20,6 @@ class ProductModel {
     async create(productData) {
         const { nombre, precio_neto, precio_bruto, stock, id_categoria } = productData;
         const query = "INSERT INTO productos (nombre, precio_neto, precio_bruto, stock, id_categoria) VALUES (?, ?, ?, ?, ?)";
-        console.log(query);
         const params = [nombre, precio_neto, precio_bruto, stock, id_categoria];
         const [result] = await this.db.execute(query, params);
         // IMPORTANTE: Devuelve el producto con el ID generado por la base de datos

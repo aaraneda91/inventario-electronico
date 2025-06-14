@@ -35,8 +35,9 @@ class ProductModel {
         return result.affectedRows > 0; // Devuelve true si se actualizó una fila
     }
 
-    async delete(id) {
-        const [result] = await this.db.execute('DELETE FROM productos WHERE idproductos = ?', [id]);
+    async delete(productData) {
+        const { idproduct } = productData;
+        const [result] = await this.db.execute('DELETE FROM productos WHERE idproductos = ?', [idproduct]);
         return result.affectedRows > 0; // Devuelve true si se eliminó una fila
     }
 }

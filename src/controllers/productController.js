@@ -63,8 +63,18 @@ const updateProduct = async (req, res) => {
     }
 }
 
+const deleteProduct = async (req, res) => {
+    try {
+        const productDeleted = await ProductModel.delete(req.body);
+        res.status(201).json({ message: 'Producto eliminado exitosamente', product: productDeleted});
+    } catch (error) {
+        res.status(500).json({ message: 'Error interno del servidor al eliminar el producto.' });
+    }
+}
+
 module.exports = {
     getAllProducts,
     createProduct,
-    updateProduct
+    updateProduct,
+    deleteProduct
 };
